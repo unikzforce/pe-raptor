@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"  xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.raptor.peraptor.hex.HexPanelController">
+<children>
+   <Button layoutX="274.0" layoutY="188.0" mnemonicParsing="false" text="Button" />
+   <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0">
+      <columns>
+         <TableColumn prefWidth="75.0" text="C1" />
+         <TableColumn prefWidth="75.0" text="C2" />
+      </columns>
+   </TableView>
+   <TableView fx:id="hexTableView" layoutX="14.0" layoutY="14.0" prefHeight="600.0" prefWidth="800.0">
+      <columns>
+         <TableColumn fx:id="address" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="Addr.">
+         </TableColumn>
+         <TableColumn fx:id="col0" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="0" />
+         <TableColumn fx:id="col1" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="1" />
+         <TableColumn fx:id="col2" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="2" />
+         <TableColumn fx:id="col3" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="3" />
+         <TableColumn fx:id="col4" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="4" />
+         <TableColumn fx:id="col5" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="5" />
+         <TableColumn fx:id="col6" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="6" />
+         <TableColumn fx:id="col7" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="7" />
+         <TableColumn fx:id="col8" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="8" />
+         <TableColumn fx:id="col9" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="9" />
+         <TableColumn fx:id="colA" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="A" />
+         <TableColumn fx:id="colB" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="B" />
+         <TableColumn fx:id="colC" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="C" />
+         <TableColumn fx:id="colD" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="D" />
+         <TableColumn fx:id="colE" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="E" />
+         <TableColumn fx:id="colF" maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="F" />
+      </columns>
+   </TableView>
+</children>
+</Pane>
+
+<!--<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.raptor.peraptor.hex.HexPanelController">-->
+<!--   <children>-->
+<!--   </children>-->
+<!--</Pane>-->
