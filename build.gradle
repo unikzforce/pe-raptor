@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.10'
-    id 'org.beryx.jlink' version '2.24.1'
+    id 'org.beryx.jlink' version '2.24.2'
 }
 
 group 'io.raptor'
@@ -30,7 +30,7 @@ application {
 
 javafx {
     version = '17.0.1'
-    modules = ['javafx.controls', 'javafx.fxml']
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.web']
 }
 
 dependencies {
@@ -38,6 +38,7 @@ dependencies {
     implementation('org.kordamp.ikonli:ikonli-javafx:12.3.0')
     implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
     implementation('org.jfxtras:jmetro:11.6.15')
+    implementation('net.raumzeitfalle.fx:scenic-view:11.0.2')
 
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
@@ -53,6 +54,7 @@ jlink {
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
     launcher {
         name = 'app'
+        applicationDefaultJvmArgs = ['--add-opens', 'org.scenicview.scenicview/org.scenicview.view.tabs=javafx.base']
     }
 }
 

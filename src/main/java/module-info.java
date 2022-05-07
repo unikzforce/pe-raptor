@@ -7,6 +7,9 @@ module io.raptor.peraptor {
     requires org.kordamp.bootstrapfx.core;
     requires org.jfxtras.styles.jmetro;
 
+    requires transitive javafx.web;
+    requires transitive javafx.swing;
+    requires transitive org.scenicview.scenicview;
 
     opens io.raptor.peraptor to javafx.fxml;
     exports io.raptor.peraptor;

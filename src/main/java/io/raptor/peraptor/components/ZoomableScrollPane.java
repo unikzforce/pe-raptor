@@ -5,20 +5,34 @@ import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 public class ZoomableScrollPane extends ScrollPane {
     private double scaleValue = 0.7;
     private double zoomIntensity = 0.02;
-    private Node target;
+    private Group target;
     private Node zoomNode;
+    private Button topButton;
+    private Group wholeGroup;
 
-    public ZoomableScrollPane(Node target) {
+    public ZoomableScrollPane(Group target) {
         super();
+
+        this.setPrefSize( Double.MAX_VALUE, Double.MAX_VALUE );
+
+        topButton = new Button();
+        topButton.setStyle("-fx-background-color: blue;");
+        topButton.setTranslateX(400);
+        topButton.setTranslateY(400);
+
         this.target = target;
         this.zoomNode = new Group(target);
-        setContent(outerNode(zoomNode));
+        this.wholeGroup = new Group();
+        this.wholeGroup.getChildren().add(outerNode(zoomNode));
+        this.wholeGroup.getChildren().add(topButton);
+        setContent(wholeGroup);
 
         setPannable(true);
         setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -31,8 +45,9 @@ public class ZoomableScrollPane extends ScrollPane {
 
     private Node outerNode(Node node) {
         Node outerNode = centeredNode(node);
-        outerNode.setOnScroll(e -> {
-            e.consume();
+        this.setOnScroll(e -> {
+//            e.consume();
+            System.out.println(outerNode.getClass());
             onScroll(e.getTextDeltaY(), new Point2D(e.getX(), e.getY()));
         });
         return outerNode;
@@ -40,7 +55,7 @@ public class ZoomableScrollPane extends ScrollPane {
 
     private Node centeredNode(Node node) {
         VBox vBox = new VBox(node);
-        vBox.setAlignment(Pos.CENTER);
+//        vBox.setAlignment(Pos.CENTER);
         return vBox;
     }
 
